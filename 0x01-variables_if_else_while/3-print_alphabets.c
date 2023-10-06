@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: print alphabet
+ * Description: print alphabet in lowercase and uppercase
  *
  * Return: Always 0 (Success)
  */
@@ -11,21 +11,21 @@
 int main(void)
 {
 	char ch = 'a';
-	char ch = 'A';
+	char upper_ch = 'A';
 
-
-	
 	while (ch <= 'z')
 	{
-	putchar(ch);
+	putchar(ch); /* Print lowercase character*/
 	ch++;
 	}
-	while (CH <= 'Z')
-	{
-	putchar(CH);
-	CH++;
-	}
-    putchar('\n');
-    return (0);
-}
 
+	while (upper_ch <= 'Z')
+	{
+	putchar(upper_ch); /* Print uppercase character*/
+	upper_ch++;
+	}
+
+	putchar('\n'); /* Print a newline character*/
+
+	return (0);
+}
