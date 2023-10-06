@@ -1,25 +1,25 @@
 #include <stdio.h>
-
 /**
- * main - Entry point
+ * main - print a string using putchar
  *
- * Description: print all alphabet
+ * Description: print alphabets except q / e
  *
- * Return: Always 0 (Success)
+ * Return: 0
  */
 
 int main(void)
 {
-	char ch = 'a';
+	char ch;
 
-	while (ch <= 'z')
+	for (ch = 'a'; ch <= 'z'; ch++)
+
 	{
-		if (ch != 'e' && ch != 'q'
-			ch++;
-		putchar(ch);
-		ch++;
+		if (ch != 'q' && ch != 'e')
+
+			putchar(ch);
 	}
 
 	putchar('\n');
+
 	return (0);
 }
