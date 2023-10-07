@@ -2,7 +2,7 @@
 /**
  * main - prints all possible combinations of two two-digit numbers
  *
- * Description: from 0 to 99, using only putchar and 00 01 considered same as 01 00
+ * Description: from 0 to 99
  *
  * Return: 0
  */
