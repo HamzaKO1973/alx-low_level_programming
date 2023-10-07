@@ -2,7 +2,7 @@
 /**
  * main - print a string using putchar
  *
- * Description: print alphabets except q and e
+ * Description: print alphabets in reverse
  *
  * Return: 0
  */
@@ -10,12 +10,10 @@ int main(void)
 {
 	char ch;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
-	{
-		if (ch != 'q' && ch != 'e')
+	for (ch = 'z'; ch >= 'a'; ch--)
 
-			putchar(ch);
-	}
+		putchar(ch);
+
 	putchar('\n');
 
 	return (0);
