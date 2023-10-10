@@ -1,16 +1,18 @@
-#include "main.h"
+#include"main.h"
 
 /**
- * Prints the alphabet in lowercase 10 times followed by a ne line.
+ *
+ * print_alphabet_x10 :function that will print the alphabet 10 times
 */
+
 void print_alphabet_x10(void)
 {
-	int i, ch;
+	int line, ch;
 
-	for (i = 0; i < 10; i++)
+	for (line = 0; line <= 9; line++)
 	{
-	for (ch = 'a'; ch <= 'z'; ch++)
-	_putchar(ch);
+		for (ch = 'a'; ch <= 'z'; ch++)
+			_putchar(ch);
 		_putchar('\n');
 	}
 }
