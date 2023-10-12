@@ -1,4 +1,12 @@
 #include <stdio.h>
+
+/**
+ * main - the staring point of the code
+ *
+ * Return: 0 always success
+ *
+ */
+
 int main(void)
 {
 	int i = 1;
