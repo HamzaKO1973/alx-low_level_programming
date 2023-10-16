@@ -1,41 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _atoi - Converts a string to an integer.
- * @s: The input string.
- *
- * Return: The converted integer, or 0 if an error occurs.
+ * puts_half - Prints the second half of a string, followed by a new line.
+ * @str: The string to print the second half of.
  */
-int _atoi(char *s)
+void puts_half(char *str)
 {
-	int sign = 1; /* Initialize the sign as positive */
-	int result = 0; /* Initialize the result */
-	int i = 0;
-	int limit = INT_MAX / 10; /* Maximum integer value divided by 10 */
+	int len = 0;
+	int i;
+	int start;
 
-	while (s[i] != '\0')
-	{
-	if (s[i] == '-')
-	{
-	sign = -sign; /* Handle negative sign */
-	}
-	else if (s[i] >= '0' && s[i] <= '9')
-	{
-	/* Check for integer overflow before adding the digit */
-	if (result > limit || (result == limit && (s[i] - '0') > 7))
-	{
-	return (sign == 1 ? INT_MAX : INT_MIN);
-	}
-	/* Accumulate the digit into the result */
-	result = result * 10 + (s[i] - '0');
-	}
-	else if (result != 0)
-	{
-	/* Break the loop if non-digit characters follow digits */
-	break;
-	}
-	i++;
-	}
+	/* Calculate the length of the string */
+	while (str[len] != '\0')
+	len++;
 
-	return (result * sign);
+	/* Calculate the starting index for the second half */
+	start = (len + 1) / 2;
+
+	/* Print the second half of the string */
+	for (i = start; i < len; i++)
+	_putchar(str[i]);
+
+	_putchar('\n');
 }
