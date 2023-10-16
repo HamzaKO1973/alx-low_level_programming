@@ -6,16 +6,18 @@
  */
 void print_rev(char *s)
 {
-	int length = 0;
+	int i, j;
 
-	/* Calculate the length of the string */
-	while (s[length] != '\0')
-		length++;
-
-	/* Print the string in reverse order */
-	for (int i = length - 1; i >= 0; i--)
-
-		_putchar(s[i]);
-
-		_putchar('\n');
+	i = j = 0;
+	while (s[i] != '\0')
+	{
+		j = i;
+		i++;
+	}
+	for (i = j; i >= 0; i--)
+	{
+		if (s[i] != '\0')
+			_putchar(s[i]);
+	}
+	_putchar('\n');
 }
