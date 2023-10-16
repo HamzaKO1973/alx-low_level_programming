@@ -1,26 +1,30 @@
-#include "main.h"
-#include <stdio.h>
-
 /**
- * puts_half - Prints the second half of a string, followed by a new line.
- * @str: The string to print the second half of.
+ * _atoi - Converts a string to an integer.
+ * @s: The string to convert.
+ *
+ * Return: The integer converted from the string.
  */
-void puts_half(char *str)
+int _atoi(char *s)
 {
-	int len = 0;
-	int i;
-	int start;
+	int sign = 1;  /* 1 for positive, -1 for negative */
+	int result = 0;
 
-	/* Calculate the length of the string */
-	while (str[len] != '\0')
-	len++;
+	while (*s)
+	{
+	if (*s == '-')
+	{
+	sign *= -1;
+	}
+	else if (*s >= '0' && *s <= '9')
+	{
+	result = result * 10 + (*s - '0');
+	}
+	else if (result > 0)
+	{
+	break;  /* Stop if we encounter non-numeric characters after numbers */
+	}
+	s++;
+	}
 
-	/* Calculate the starting index for the second half */
-	start = (len + 1) / 2;
-
-	/* Print the second half of the string */
-	for (i = start; i < len; i++)
-	_putchar(str[i]);
-
-	_putchar('\n');
+	return (result * sign);
 }
