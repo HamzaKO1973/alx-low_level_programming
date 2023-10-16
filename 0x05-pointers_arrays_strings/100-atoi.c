@@ -6,12 +6,12 @@
  *
  * Return: The integer converted from the string, or 0 if no valid conversion.
  */
-int _atoi(char *s)
+unsigned int _atoi(char *s)
 {
-	int result = 0;
-	int sign = 1;
-	int i = 0;
-	int is_number = 0;
+	unsigned int result = 0;
+	unsigned int sign = 1;
+	unsigned int i = 0;
+	unsigned int is_number = 0;
 
 	while (s[i])
 	{
