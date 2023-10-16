@@ -1,30 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * puts_half - Prints half of a string, followed by a new line.
- * @str: The string to be printed.
+ * puts_half - Prints the second half of a string, followed by a new line.
+ * @str: The string to print the second half of.
  */
 void puts_half(char *str)
 {
-	int length = 0;
-	int i, start;
+	int len = 0;
+	int i;
+	int start;
 
-	while (str[length] != '\0')
-	length++;
+	/* Calculate the length of the string */
+	while (str[len] != '\0')
+	len++;
 
-	if (length % 2 == 0)
-	{
-	start = length / 2;
-	}
-	else
-	{
-	start = (length - 1) / 2;
-	}
+	/* Calculate the starting index for the second half */
+	start = (len + 1) / 2;
 
-	for (i = start; str[i] != '\0'; i++)
-	{
+	/* Print the second half of the string */
+	for (i = start; i < len; i++)
 	_putchar(str[i]);
-	}
 
 	_putchar('\n');
 }
