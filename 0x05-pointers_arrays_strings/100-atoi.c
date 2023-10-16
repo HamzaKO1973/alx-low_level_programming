@@ -24,7 +24,7 @@ int _atoi(char *s)
 	result = (result * 10) + (s[i] - '0');
 	is_number = 1;
 	}
-	else if (is_number == 1)
+	else if (is_number > 0)
 	{
 	break;
 	}
