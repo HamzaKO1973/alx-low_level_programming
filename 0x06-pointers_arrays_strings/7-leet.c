@@ -6,17 +6,17 @@
  */
 char *leet(char *str)
 {
-	char leet_code[][2] = {{'A', '4'}, {'E', '3'}, {'O', '0'}, {'T', '7'}, {'L', '1'}};
-	int str_index = 0, code_index = 0;
+	char code[][2] = {{'A', '4'}, {'E', '3'}, {'O', '0'}, {'T', '7'}, {'L', '1'}};
+	int i, j = 0;
 
-	while (str[str_index] != '\0')
+	while (str[j] != '\0')
 	{
-	for (code_index = 0; code_index < 5; code_index++)
-	{
-	if (str[str_index] == leet_code[code_index][0] || str[str_index] == leet_code[code_index][0] + 32)
-	str[str_index] = leet_code[code_index][1];
-	}
-	str_index++;
+		for (i = 0; i < 5; i++)
+		{
+			if (str[j] == code[i][0] || str[j] == code[i][0] + 32)
+				str[j] = code[i][1];
+		}
+		j++;
 	}
 	return (str);
 }
