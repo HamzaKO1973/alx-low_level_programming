@@ -20,12 +20,12 @@ return (check_prime (n, 2));
  * Return: int
  */
 
-int check_prime (int n, int othrn)
+int check_prime (int n, int f)
 {
 if (f >= n && n > 1)
 	return (1);
 else if (n % f == 0 || n <= 1)
 	return (0);
 else
-	return (check_prime (n,f + 1));
+	return (check_prime (n, f + 1));
 }
