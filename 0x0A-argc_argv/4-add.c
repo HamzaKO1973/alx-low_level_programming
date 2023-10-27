@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - print the minimum number of coins
+ * main - main
  * @argc: argc
  * @argv: argv 
  * Return: Always 0.
@@ -10,31 +10,16 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int sum = 0;
+	char *c;
 
-	if (argc == 1)
+	while (--argc)
 	{
-		printf("0\n");
-		return 0;
+		for (c = argv[argc]; *c; c++)
+			if (*c < '0' || *c > '9')
+				return (printf("ERROR\n"),1);
+		sum += atoi(argv[argc]);
 	}
-
-	for (i = 1; i < argc; i++)
-	{
-		int j = 0;
-
-		while (argv[i][j] != '\0')
-		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-			{
-				printf("Error\n");
-				return 1;
-			}
-			j++;
-		}
-
-		sum += atoi(argv[i]);
-	}
-
 	printf("%d\n", sum);
-	return 0;
+	return (0);
 }
