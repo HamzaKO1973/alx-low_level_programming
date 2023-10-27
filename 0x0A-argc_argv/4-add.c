@@ -10,30 +10,31 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc == 2)
-	{
-	int i, lea = 0, mon = atoi(argc[1]);
-	int cents[] = {25, 10, 5, 2, 1,};
+	int i, sum = 0;
 
-	for (i = 0; i < 5; i++)
+	if (argc == 1)
 	{
-		if (money >= cents[i])
+		printf("0\n");
+		return 0;
+	}
+
+	for (i = 1; i < argc; i++)
+	{
+		int j = 0;
+
+		while (argv[i][j] != '\0')
 		{
-
-			lea += mon / cents[i];
-			mon = mon % cents[i];
-			if (money % cents[i] == 0)
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
-				break;
+				printf("Error\n");
+				return 1;
 			}
+			j++;
 		}
+
+		sum += atoi(argv[i]);
 	}
-	printf("%d\n", leastcents);
-	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
-	return (0);
+
+	printf("%d\n", sum);
+	return 0;
 }
