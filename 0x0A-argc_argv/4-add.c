@@ -7,33 +7,27 @@
  * @argv: argv 
  * Return: Always 0.
  */
+
 int main(int argc, char *argv[])
 {
-	if (argc == 2)
-	{
-	int i, lea = 0, mon = atoi(argv[1]);
-	int cents[] = {25, 10, 5, 2, 1};
+	int i, po, so = 0;
 
-	for (i = 0; i < 5; i++)
+	for (i = 1; i < argc; i++)
 	{
 
-		if (mon >= cents[i])
+		po = atoi(argv[i]);
+
+		if (po <= 0)
 		{
-			lea += mon / cents[i];
-			mon = mon % cents[i];
-			if (money % cents[i] == 0)
-			{
-				break;
-			}
+			printf("Error\n");
+
+			return (1);
 		}
+
+		so = so + po;
 	}
 
-	printf("%d\n", lea);
-	}
-	else
-	{
-		print("Error\n"0;
-		return (1);
-	}
+	printf("%d\n", so);
+
 	return (0);
 }
