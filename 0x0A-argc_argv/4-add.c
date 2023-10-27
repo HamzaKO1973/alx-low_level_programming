@@ -10,24 +10,30 @@
 
 int main(int argc, char *argv[])
 {
-	int i, po, so = 0;
-
-	for (i = 1; i < argc; i++)
+	if (argc == 2)
 	{
+	int i, lea = 0, mon = atoi(argc[1]);
+	int cents[] = {25, 10, 5, 2, 1,};
 
-		po = atoi(argv[i]);
-
-		if (po <= 0)
+	for (i = 0; i < 5; i++)
+	{
+		if (money >= cents[i])
 		{
-			printf("Error\n");
 
-			return (1);
+			lea += mon / cents[i];
+			mon = mon % cents[i];
+			if (money % cents[i] == 0)
+			{
+				break;
+			}
 		}
-
-		so = so + po;
 	}
-
-	printf("%d\n", so);
-
+	printf("%d\n", leastcents);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
 	return (0);
 }
