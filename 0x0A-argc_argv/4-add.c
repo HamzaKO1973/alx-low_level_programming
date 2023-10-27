@@ -7,35 +7,25 @@
  * @argv: argv 
  * Return: Always 0.
  */
-
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int i, n, sum = 0;
-	char *flag;
+	int i, sum = 0;
+	char *pos;
 
-
-	if (argc < 2)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0\n");
-		return (0);
+		for (pos = argv[i]; *pos; pos++)
+		{
+			if (*pos < '0' || *pos > '9')
+			{
+				puts("Error");
+				return (1);
+			}
+		}
+		sum += atoi(argv[i]);
 	}
 
-
-	for (i = 1; argv[i]; i++)
-	{
-		n = strtol(argv[i], &flag, 10);
-		if (*flag)
-	{
-	printf("Error\n");
-	return (1);
-	}
-	else
-	{
-		sum += n;
-	}
-	}
 	printf("%d\n", sum);
-
 
 	return (0);
 }
