@@ -5,8 +5,8 @@
 
 /**
  * create_array - entry point
- * @c: c 
- * @size: size 
+ * @c: c
+ * @size: size
  * Return: return
  */
 
