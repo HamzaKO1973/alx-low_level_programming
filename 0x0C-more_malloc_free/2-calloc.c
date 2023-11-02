@@ -7,7 +7,7 @@
  *
  * Return: void pointer to array space
  */
-void *_calloc(int n, int s)
+void *_calloc(unsigned int n, unsigned int s)
 {
 	char *p;
 
